@@ -33,7 +33,10 @@ namespace Minesweeper
 
         private void StartGame_Click(object sender, RoutedEventArgs e)
         {
-            Board Tiles = Board.InitiateBoard();
+            Board.FlaggedMines = 0;
+            Board.CorrectFlaggedMines = 0;
+
+        Board Tiles = Board.InitiateBoard();
             foreach (int i in Enumerable.Range(0, Board.TheBoard.Count()))
             {
                 Board.TheBoard[i].CalculateMinesSurrounding(i);
